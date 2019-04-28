@@ -20,8 +20,11 @@ namespace TBQuestGame.S2.Models
         private int _requiredKeyId;
         private ObservableCollection<GameItemQuantity> _gameItems;
         private ObservableCollection<NPC> _npc;
+        private int _modifyStamina;
 
         
+
+
 
 
 
@@ -94,6 +97,11 @@ namespace TBQuestGame.S2.Models
             set { _npc = value; }
         }
 
+        public int ModifyStamina
+        {
+            get { return _modifyStamina; }
+            set { _modifyStamina = value; }
+        }
         #endregion
 
         #region CONSTRUCTORS

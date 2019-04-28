@@ -155,6 +155,10 @@
                     <TextBox Text="{Binding Player.Wealth}" Style="{StaticResource MainPanelTextBoxStyle}"/>
                     <Label Content="Wealth" Style="{StaticResource MasterLabel}"/>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding Player.Lives}" Style="{StaticResource MainPanelTextBoxStyle}"/>
+                    <Label Content="Lives" Style="{StaticResource MasterLabel}"/>
+                </StackPanel>
                 
 
 
@@ -190,11 +194,16 @@
                               AutoGenerateColumns="False"
                               HeadersVisibility="Column">
                         <DataGrid.Columns>
-                            <DataGridTextColumn
-                                Header="Description"
+                            <DataGridTextColumn Header="Description"
                                 IsReadOnly="True"
                                 Binding="{Binding GameItem.Information, Mode=OneWay}"
-                                Width="auto"/>
+                                Width="*">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style>
+                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
                             <DataGridTextColumn
                                 Header="Qty"
                                 IsReadOnly="True"

@@ -168,11 +168,20 @@ namespace TBQuestGame.PresentationLayer
                 _player.LocationsVisited.Add(_currentLocation);
             }
 
-            
+            _player.Stamina -= _currentLocation.ModifyStamina;
+
+            if (_player.Stamina <= 0)
+            {
+                _player.Lives -= 1;
+            }
+            else if (_player.Lives <= 0)
+            {
+                ResetPlayer();
+            }
 
             
         }
-
+        
         public void OnPlayerTalkTo()
         {
             if (CurrentNPC != null && CurrentNPC is ISpeak)
@@ -237,7 +246,7 @@ namespace TBQuestGame.PresentationLayer
         //    }
         //}
 
-        private void OnPlayerDies(string message)
+        public void OnPlayerDies(string message)
         {
             string messagetext = message + "\n\nRestart?";
 
@@ -415,18 +424,21 @@ namespace TBQuestGame.PresentationLayer
         {
             _player.BattleMode = BattleModeName.Attack;
             Battle();
+            _player.Stamina -= 20;
         }
 
         private void OnPlayerDefend()
         {
             _player.BattleMode = BattleModeName.Defend;
             Battle();
+            _player.Stamina -= 10;
         }
 
         private void OnPlayerRetreat()
         {
             _player.BattleMode = BattleModeName.Retreat;
             Battle();
+            _player.Stamina -= 15;
         }
         #endregion
 

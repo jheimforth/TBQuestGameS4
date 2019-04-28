@@ -21,7 +21,8 @@ namespace TBQuestGame.DataLayer
                 Age = 25,
                 Status = Player.SocialStatus.Servant,
                 Race = Character.RaceType.Human,
-                Health= 100,
+                Health = 100,
+                Lives = 3,
                 //
                 //Change Mana to Stamina, make the game drain stamina everytime you walk through
                 //the dungeon to a different location. Potion type to recharge stamina. 
@@ -134,6 +135,7 @@ namespace TBQuestGame.DataLayer
                     Description="SOON (TM)",
                     Accessible=true,
                     ModifyExperiencePoints=0,
+                    ModifyStamina =10,
                     ModifyHealth=0,
                     GameItems = new ObservableCollection<GameItemQuantity>
                     {
@@ -156,6 +158,7 @@ namespace TBQuestGame.DataLayer
                     Description="SOON (TM)",
                     Accessible=true,
                     ModifyExperiencePoints=15,
+                    ModifyStamina= 10,
                     ModifyHealth=0,
                     GameItems = new ObservableCollection<GameItemQuantity>
                     {
@@ -184,6 +187,7 @@ namespace TBQuestGame.DataLayer
                 Description = "SOON (TM)",
                 Accessible = true,
                 ModifyExperiencePoints = 0,
+                ModifyStamina = 10,
                 ModifyHealth = 0,
                 GameItems = new ObservableCollection<GameItemQuantity>
                     {
