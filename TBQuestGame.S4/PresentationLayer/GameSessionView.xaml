@@ -155,8 +155,7 @@
                     <TextBox Text="{Binding Player.Wealth}" Style="{StaticResource MainPanelTextBoxStyle}"/>
                     <Label Content="Wealth" Style="{StaticResource MasterLabel}"/>
                 </StackPanel>
-                <TextBox Height="auto"
-                         Text="{Binding}"/>
+                
 
 
             </StackPanel>

@@ -25,7 +25,7 @@ namespace TBQuestGame.PresentationLayer
         private ObservableCollection<Location> _accessibleLocations;
         private GameItemQuantity _currentGameItem;
         private NPC _currentNPC;
-        private string _currentLocationInformation;
+       
 
         
 
@@ -68,9 +68,7 @@ namespace TBQuestGame.PresentationLayer
             set
             {
                 _currentLocation = value;
-                CurrentLocationInformation = _currentLocation.Description;
-                OnPropertyChanged(nameof(CurrentLocation));
-                OnPropertyChanged(nameof(CurrentLocationInformation));
+                
                 
             }
         }
@@ -114,15 +112,7 @@ namespace TBQuestGame.PresentationLayer
             set { _currentNPC = value; }
         }
 
-        public string CurrentLocationInformation
-        {
-            get { return _currentLocationInformation; }
-            set
-            {
-                _currentLocationInformation = value;
-                OnPropertyChanged(nameof(CurrentLocationInformation));
-            }
-        }
+        
         #endregion
 
         #region Constructors
@@ -146,7 +136,7 @@ namespace TBQuestGame.PresentationLayer
             _accessibleLocations = _gameMap.AccessibleLocations;
             _player.UpdateInventoryCategories();
             _player.CalculateWealth();
-            _currentLocationInformation = CurrentLocation.Description;
+            
         }
 
 
