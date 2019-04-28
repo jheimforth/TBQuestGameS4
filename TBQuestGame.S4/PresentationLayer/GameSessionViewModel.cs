@@ -274,7 +274,7 @@ namespace TBQuestGame.PresentationLayer
         private void ProcessPotionUse(Potions potions)
         {
             _player.Health += potions.HealthChange;
-            _player.Mana += potions.ManaChange;
+            _player.Stamina += potions.StaminaChange;
             _player.RemoveGameItemQuantityFromInventory(_currentGameItem);
         }
 
@@ -396,6 +396,7 @@ namespace TBQuestGame.PresentationLayer
                 {
                     battleInformation += $"You have slain {_currentNPC.Name}.";
                     _currentLocation.Npc.Remove(_currentNPC);
+                    _player.ExperiencePoints += 10;
                 }
                 else
                 {
@@ -406,11 +407,7 @@ namespace TBQuestGame.PresentationLayer
                 CurrentLocationName = battleInformation;
                 if (_player.Lives <= 0) OnPlayerDies("You have been slain and have no lives left.");
             }
-            else
-            {
-                CurrentLocationName = "The current NPC will is not battle ready. Seems you are a bit jumpy and your experience suffers.";
-                _player.ExperiencePoints -= 10;
-            }
+            
 
         }
         

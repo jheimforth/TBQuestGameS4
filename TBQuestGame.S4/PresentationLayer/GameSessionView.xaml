@@ -148,8 +148,8 @@
                     <Label Content="Health" Style="{StaticResource MasterLabel}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBox Text="{Binding Player.Mana}" Style="{StaticResource MainPanelTextBoxStyle}"/>
-                    <Label Content="Mana" Style="{StaticResource MasterLabel}"/>
+                    <TextBox Text="{Binding Player.Stamina}" Style="{StaticResource MainPanelTextBoxStyle}"/>
+                    <Label Content="Stamina" Style="{StaticResource MasterLabel}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Text="{Binding Player.Wealth}" Style="{StaticResource MainPanelTextBoxStyle}"/>

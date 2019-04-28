@@ -10,12 +10,12 @@ namespace TBQuestGame.Models
     {
 
         public int HealthChange { get; set; }
-        public int ManaChange { get; set; }
-        public Potions(int id, string name, int value, int healthChange, int manaChange, string description, int experiencePoints)
+        public int StaminaChange { get; set; }
+        public Potions(int id, string name, int value, int healthChange, int staminaChange, string description, int experiencePoints)
             : base(id, name, value, description, experiencePoints)
         {
             HealthChange = healthChange;
-            ManaChange = manaChange;
+            StaminaChange = staminaChange;
         }
 
         public override string InformationString()
@@ -24,9 +24,9 @@ namespace TBQuestGame.Models
             {
                 return $"{Name}: {Description}\nHealth: {HealthChange}";
             }
-            else if (ManaChange != 0)
+            else if (StaminaChange != 0)
             {
-                return $"{Name}: {Description}\nMana: {ManaChange}";
+                return $"{Name}: {Description}\nStamina: {StaminaChange}";
             }
             else
             {

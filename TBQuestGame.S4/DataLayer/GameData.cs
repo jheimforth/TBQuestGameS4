@@ -27,7 +27,7 @@ namespace TBQuestGame.DataLayer
                 //the dungeon to a different location. Potion type to recharge stamina. 
                 //Add in a revitalizing stones in place of lives.
                 //
-                Mana = 100,
+                Stamina = 50,
                 ExperiencePoints = 0,
                 SkillLevel = 5,
                 LocationId = 0,
@@ -211,9 +211,9 @@ namespace TBQuestGame.DataLayer
                 new Weapons(106, "Venomous Fang", 10, 15, 20, "A venomous fang from the ancient races of spiders. Obtaining one can become quite difficult.", 10),
                 new Weapons(107, "Bastard Sword", 20, 25,35, "A hulking sword in size. It requires the mightiest of warriors to wield.", 15),
                 new Potions(201, "Lesser Health Potion", 10, 15, 0, "A potion that is capable of replenishing a small amount of health. Made by the elves who are known for their great knowledge of healing medicines.", 5),
-                new Potions(202, "Lesser Mana Potion", 10, 0, 15, "A potion that has the ability to replenish a small amount of mana. Made by recovering ancient magical waters from the Illithi Forest's hidden spring.", 5),
+                new Potions(202, "Lesser Stamina Potion", 10, 0, 15, "A potion that has the ability to replenish a small amount of mana. Made by recovering ancient magical waters from the Illithi Forest's hidden spring.", 5),
                 new Potions(203, "Greater Health Potion", 20, 40, 0, "A potion that is much more potent than its weaker counterpart.", 10),
-                new Potions(204, "Greater Mana Potion", 20, 0, 40, "A potion that replenishes much more mana than its weaker counterpart.",10),
+                new Potions(204, "Greater Stamina Potion", 20, 0, 40, "A potion that replenishes much more mana than its weaker counterpart.",10),
                 new Potions(205, "Rejunenating Waters", 40, 40, 40, "An Extremely rare and potent potion that is able to double up by replenishing significant mana and health.", 20),
                 new Treasure(301, "Gold Schell", 15, Treasure.TreasureType.COIN, "A gold coin that is of the common currency of the land.", 1),
                 new Treasure(302, "Silver Schell",5, Treasure.TreasureType.COIN, "A silver coin that is used as a currency.",1),
