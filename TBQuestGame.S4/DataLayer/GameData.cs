@@ -18,16 +18,10 @@ namespace TBQuestGame.DataLayer
             {
                 Id = 1,
                 Name = "Venn",
-                Age = 25,
-                Status = Player.SocialStatus.Servant,
+                Age = 25,         
                 Race = Character.RaceType.Human,
                 Health = 100,
                 Lives = 3,
-                //
-                //Change Mana to Stamina, make the game drain stamina everytime you walk through
-                //the dungeon to a different location. Potion type to recharge stamina. 
-                //Add in a revitalizing stones in place of lives.
-                //
                 Stamina = 100,
                 ExperiencePoints = 0,
                 SkillLevel = 5,

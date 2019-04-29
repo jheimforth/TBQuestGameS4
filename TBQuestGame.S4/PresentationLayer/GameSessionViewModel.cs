@@ -147,7 +147,7 @@ namespace TBQuestGame.PresentationLayer
 
         private void OnPlayerMove()
         {
-            // Sets a new location
+            
 
             foreach (Location location in AccessibleLocations)
             {
@@ -158,9 +158,7 @@ namespace TBQuestGame.PresentationLayer
 
             }
 
-            //_currentLocation = AccessibleLocations.FirstOrDefault(l => l.Name == _currentLocationName);
-
-            // Modify experience points
+            
 
             if (!_player.LocationsVisited.Contains(_currentLocation))
             {
