@@ -13,7 +13,8 @@ namespace TBQuestGame.Models
             COIN,
             JEWLERY,
             GOLD,
-            PAINTING
+            PAINTING, 
+            TEXT
         }
 
         public TreasureType Type { get; set; }

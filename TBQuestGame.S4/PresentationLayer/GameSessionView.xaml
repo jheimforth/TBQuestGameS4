@@ -49,7 +49,7 @@
             <Setter Property="Width" Value="75"/>
             <Setter Property="Height" Value="20"/>
             <Setter Property="Background" Value="Silver"/>
-            
+
             <Setter Property="Foreground" Value="MidnightBlue"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -125,9 +125,9 @@
               Grid.Column="0"
               Margin="10,5,10,10"
               Style="{StaticResource MainBorderStyle}">
-        <StackPanel Orientation="vertical" Grid.Row="0" Grid.Column="0">
-          
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="vertical" Grid.Row="0" Grid.Column="0">
+
+                <StackPanel Orientation="Horizontal">
                     <TextBox Text="{Binding Player.Name}" Style="{StaticResource MainPanelTextBoxStyle}"/>
                     <Label Content="Name" Style="{StaticResource MasterLabel}"/>
                 </StackPanel>
@@ -159,7 +159,7 @@
                     <TextBox Text="{Binding Player.Lives}" Style="{StaticResource MainPanelTextBoxStyle}"/>
                     <Label Content="Lives" Style="{StaticResource MasterLabel}"/>
                 </StackPanel>
-                
+
 
 
             </StackPanel>
@@ -172,15 +172,16 @@
 	            Margin="5"
 	            ItemsSource="{Binding AccessibleLocations}"
 	            SelectedItem="{Binding CurrentLocationName}">
-                    
+
             </ListBox>
         </Border>
+
         <Border
             Grid.Row="0"
             Grid.Column="1"
             Margin="10,5,10,10"
             Style="{StaticResource MainBorderStyle}">
-            
+
 
             <TabControl x:Name="LocationInfoTabControl"
                         Width="400"
@@ -235,8 +236,9 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
-                
+
             </TabControl>
+
         </Border>
         <Border 
             Grid.Row="1"
@@ -264,6 +266,7 @@
             Grid.Column="2"
             Margin="10,5,10,10"
             Style="{StaticResource MainBorderStyle}">
+            <StackPanel>
             <TabControl x:Name="PlayerInventoryTabControl" Width="200" Height="250" VerticalAlignment="Top">
                 <TabItem Header="Weapons" x:Name="WeaponsTabItem">
                     <DataGrid
@@ -350,39 +353,62 @@
                     </DataGrid>
                 </TabItem>
             </TabControl>
+                <TextBox Text="{Binding CurrentGameItem.GameItem.Name}" Style="{StaticResource MainPanelTextBoxStyle}" Width="150" Margin="10"/>
+                <Label Content="Current Item"
+                       Style="{StaticResource MasterLabel}"
+                       HorizontalAlignment="Center"
+                       />
+            </StackPanel>
         </Border>
+
         <Border
             Grid.Row="1"
             Grid.Column="2"
             Margin="10,5,10,10"
             Style="{StaticResource MainBorderStyle}">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                <Button
+            <StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                    <Button
                     Content="Pick Up"
                     Width="75"
                     Margin="5"
                     Style="{StaticResource MainPanelButtonStyle}"
                     Click="Button_Click"/>
-                <Button
+                    <Button
                     Content="Put Down"
                     Width="75"
                     Margin="5"
                     Style="{StaticResource MainPanelButtonStyle}"
                     Click="PutDown_Button_Click"/>
-                <Button
+                    <Button
                     Content="Use"
                     Width="75"
                     Margin="5"
                     Style="{StaticResource MainPanelButtonStyle}"
                     Click="Item_Use_Button_Click"/>
-                <Button 
+                    <Button 
                     Content="Speak To"
                     Width="75"
                     Margin="5"
                     Style="{StaticResource MainPanelButtonStyle}"
                     Click="Speak_Button_Click"/>
+                    <Button
+                    Content="Attack"
+                    Width="75"
+                    Margin="5"
+                    Style="{StaticResource MainPanelButtonStyle}"
+                    Click="Attack_Button_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top">
+                    <Button Content="Defend"
+                            Width="75"
+                            Margin="5"
+                            Style="{StaticResource ResourceKey=MainPanelButtonStyle}"
+                            Click="Defend_Button_Click"/>
+                </StackPanel>
             </StackPanel>
-            
         </Border>
     </Grid>
 </Window>

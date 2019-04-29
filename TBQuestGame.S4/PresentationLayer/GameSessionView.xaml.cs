@@ -56,5 +56,20 @@ namespace TBQuestGame.PresentationLayer
                 _gameSessionViewModel.OnPlayerTalkTo();
             }
         }
+
+        private void Attack_Button_Click(object sender, RoutedEventArgs e)
+        {
+            //if (LocationNPCsDataGrid.SelectedItem != null)
+            //{
+                
+            //}
+            _gameSessionViewModel.OnPlayerAttack();
+
+        }
+
+        private void Defend_Button_Click(object sender, RoutedEventArgs e)
+        {
+            _gameSessionViewModel.OnPlayerDefend();
+        }
     }
 }

@@ -11,11 +11,13 @@ namespace TBQuestGame.Models
 
         public int HealthChange { get; set; }
         public int StaminaChange { get; set; }
-        public Potions(int id, string name, int value, int healthChange, int staminaChange, string description, int experiencePoints)
+        public int LivesChange { get; set; }
+        public Potions(int id, string name, int value, int healthChange, int staminaChange, int livesChange, string description, int experiencePoints)
             : base(id, name, value, description, experiencePoints)
         {
             HealthChange = healthChange;
             StaminaChange = staminaChange;
+            LivesChange = livesChange;
         }
 
         public override string InformationString()

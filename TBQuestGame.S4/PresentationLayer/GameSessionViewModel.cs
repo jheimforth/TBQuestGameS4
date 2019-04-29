@@ -169,17 +169,28 @@ namespace TBQuestGame.PresentationLayer
             }
 
             _player.Stamina -= _currentLocation.ModifyStamina;
+            _player.Health -= _currentLocation.ModifyHealth;
 
             if (_player.Stamina <= 0)
             {
                 _player.Lives -= 1;
+                _player.Stamina = 100;
             }
-            else if (_player.Lives <= 0)
+            else if (_player.Lives<= 0)
             {
-                ResetPlayer();
+                OnPlayerDies("You have perished.");
+            }
+
+
+            if (_player.Health <= 0)
+            {
+                _player.Lives -= 1;
+                _player.Health = 100;
             }
 
             
+            
+
         }
         
         public void OnPlayerTalkTo()
@@ -284,6 +295,7 @@ namespace TBQuestGame.PresentationLayer
         {
             _player.Health += potions.HealthChange;
             _player.Stamina += potions.StaminaChange;
+            _player.Lives += potions.LivesChange;
             _player.RemoveGameItemQuantityFromInventory(_currentGameItem);
         }
 
@@ -420,21 +432,21 @@ namespace TBQuestGame.PresentationLayer
 
         }
         
-        private void OnPlayerAttack()
+        public void OnPlayerAttack()
         {
             _player.BattleMode = BattleModeName.Attack;
             Battle();
             _player.Stamina -= 20;
         }
 
-        private void OnPlayerDefend()
+        public void OnPlayerDefend()
         {
             _player.BattleMode = BattleModeName.Defend;
             Battle();
             _player.Stamina -= 10;
         }
 
-        private void OnPlayerRetreat()
+        public void OnPlayerRetreat()
         {
             _player.BattleMode = BattleModeName.Retreat;
             Battle();
