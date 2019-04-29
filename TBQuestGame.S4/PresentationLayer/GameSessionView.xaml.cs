@@ -25,9 +25,14 @@ namespace TBQuestGame.PresentationLayer
         {
             _gameSessionViewModel = gameSessionViewModel;
 
-            
+            InitializeWindowTheme();
 
             InitializeComponent();
+        }
+
+        private void InitializeWindowTheme()
+        {
+            this.Title = "Dungeon Plunder";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
